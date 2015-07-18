@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 
-#include "headers/gsTransmitSL.h"
+#include "gsTransmitSL.h"
 
 TransmitLstn::TransmitLstn() {}
 TransmitSub::TransmitSub() {}

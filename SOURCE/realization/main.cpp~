@@ -16,16 +16,14 @@
 #include "headers/MainWindowTab.h"
 
 
-//void MsgHandler(QtMsgType type,const char *msg)
-void MsgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
+void MsgHandler(QtMsgType type,const char *msg)
 {
     //do nothing
 }
 
 int main(int argc, char *argv[])
 {
-   qInstallMessageHandler(MsgHandler);
-//qInstallMsgHandler(MsgHandler);
+   qInstallMsgHandler(MsgHandler);
    QApplication app(argc,argv);
 
    MainWindow *MainWin=new MainWindow(NULL);

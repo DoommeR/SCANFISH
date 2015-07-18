@@ -60,7 +60,7 @@ int MainWindow :: notify()
     for (i=0;i<gs->GSRec->getMsgDlc();i++)
     {
         sprintf(data_element,"%02X",gs->GSRec->getMsgData(i));
-        text=text+" "+QString::fromLatin1(data_element,strlen(data_element)); //formAscii заменен на fromLatin1
+        text=text+" "+QString::fromLatin1(data_element,strlen(data_element));
     }
     QTime time;
     time=((QDateTime::fromTime_t(gs->GSRec->getMsgTimestampSec())).time());

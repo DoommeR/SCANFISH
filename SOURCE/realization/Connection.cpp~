@@ -45,7 +45,7 @@ void Connection :: ConnectClicked()
 {
     tabName=can0->text();
     strInt.clear();
-    strInt.append(can0->text().toLatin1());//Внимание. Костыль, изначально было toAscii()
+    strInt.append(can0->text().toLatin1());
     //strInt.append(can0->text().toAscii());
     if (GS->GSCon->gsConnection(strInt.data(),canl)==0)
     {

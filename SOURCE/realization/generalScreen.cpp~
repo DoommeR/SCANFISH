@@ -1,4 +1,4 @@
-#include "headers/generalScreen.h"
+#include "generalScreen.h"
 
 GeneralScreen *GeneralScreen::singleton = NULL;
 

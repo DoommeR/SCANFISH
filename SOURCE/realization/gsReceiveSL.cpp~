@@ -1,4 +1,4 @@
-#include "headers/gsReceiveSL.h"
+#include "gsReceiveSL.h"
 
 ReceiveLstn::ReceiveLstn() {}
 ReceiveSub::ReceiveSub() {}

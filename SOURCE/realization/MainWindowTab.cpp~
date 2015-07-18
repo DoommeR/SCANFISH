@@ -1,4 +1,4 @@
-#include "headers/MainWindowTab.h"
+#include "MainWindowTab.h"
 
 MainWindowTab :: MainWindowTab(QTabWidget *tab1) : QTabWidget(tab1)
 {

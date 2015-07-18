@@ -53,7 +53,7 @@ Receive :: Receive(QWidget *Rec) : QGroupBox (Rec)
 
    setLayout(RecLayout);
 
-   RecTab->horizontalHeader()->setSectionResizeMode(3,QHeaderView::Stretch);//setResizeMode changed to setSectionMode
+   RecTab->horizontalHeader()->setSectionResizeMode(3,QHeaderView::Stretch);
    RecTab->verticalHeader()->setVisible(false);
 
    connect (RecFilterButton,SIGNAL(clicked()),this,SLOT(RecTableFilter()));

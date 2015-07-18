@@ -30,7 +30,7 @@ Transmit :: Transmit(QWidget *Trans) : QGroupBox (Trans)
     TransClearButton->setFixedSize(95,27);
     TransClearButton->setEnabled(false);
 
-    TransTab->horizontalHeader()->setSectionResizeMode(3,QHeaderView::Stretch);
+    TransTab->horizontalHeader()->setResizeMode(3,QHeaderView::Stretch);
 
    TransSaveButton=new QPushButton ("Save");
    TransSaveButton->setFixedSize (95,27);

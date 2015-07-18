@@ -1,6 +1,10 @@
 TEMPLATE = app
-INCLUDEPATH = 
-DEPENDPATH =
+TARGET = ScanFish
+QT += gui widgets
+DESTDIR = Release/GNU-Linux-x86
+OBJECTS_DIR = build
+MOC_DIR = build
+UI_DIR = build
 HEADERS =	headers/canio.h	\
 		headers/canlistener.h	\
 		headers/cannet.h	\
@@ -36,13 +40,8 @@ SOURCES = 	realization/canio.cpp	\
 		realization/MainWindow.cpp 	\
 		realization/MainWindowTab.cpp 	\
 		realization/MessageEditor.cpp 	\
-		realization/moc_Connection.cpp 	\
-		realization/moc_MainWindow.cpp 	\
-		realization/moc_MainWindowTab.cpp 	\
-		realization/moc_MessageEditor.cpp 	\
-		realization/moc_Receive.cpp 	\
-		realization/moc_Transmit.cpp 	\
 		realization/msg.cpp 	\
 		realization/msgspv.cpp 	\
 		realization/Receive.cpp 	\
-		realization/Transmit.cpp
+		realization/Transmit.cpp	
+CONFIG += qt warn_on release
