@@ -1,48 +1,48 @@
 TEMPLATE = app
-INCLUDEPATH = /home/doommer/LetoPract/SCANFISH/SOURCE/headers
-DEPENDPATH = $$PWD/realization
-HEADERS +=	canio.h	\
-		canlistener.h	\
-		cannet.h	\
-		Connection.h	\
-		controller.h	\
-		generalScreen.h \
-		gsConnect.h	\
-		gsMessageEditor.h \
-		gsReceive.h	\
-		gsReceiveSL.h	\
-		gsTransmit.h	\
-		gsTransmitSL.h	\
-		MainWindow.h	\
-		MainWindowTab.h	\
-		MessageEditor.h	\
-		msg.h		\
-		msgspv.h	\
-		Receive.h	\
-		sferror.h	\
-		Transmit.h	
-SOURCES += 	canio.cpp	\
-		cannet.cpp 	\
-		Connection.cpp 	\
-		controller.cpp 	\
-		generalScreen.cpp \
-		gsConnect.cpp 	\
-		gsMessageEditor.cpp \
-		gsReceive.cpp 	\
-		gsReceiveSL.cpp \
-		gsTransmit.cpp 	\
-		gsTransmitSL.cpp \
-		main.cpp 	\
-		MainWindow.cpp 	\
-		MainWindowTab.cpp 	\
-		MessageEditor.cpp 	\
-		moc_Connection.cpp 	\
-		moc_MainWindow.cpp 	\
-		moc_MainWindowTab.cpp 	\
-		moc_MessageEditor.cpp 	\
-		moc_Receive.cpp 	\
-		moc_Transmit.cpp 	\
-		msg.cpp 	\
-		msgspv.cpp 	\
-		Receive.cpp 	\
-		Transmit.cpp
+INCLUDEPATH = 
+DEPENDPATH =
+HEADERS =	headers/canio.h	\
+		headers/canlistener.h	\
+		headers/cannet.h	\
+		headers/Connection.h	\
+		headers/controller.h	\
+		headers/generalScreen.h \
+		headers/gsConnect.h	\
+		headers/gsMessageEditor.h \
+		headers/gsReceive.h	\
+		headers/gsReceiveSL.h	\
+		headers/gsTransmit.h	\
+		headers/gsTransmitSL.h	\
+		headers/MainWindow.h	\
+		headers/MainWindowTab.h	\
+		headers/MessageEditor.h	\
+		headers/msg.h		\
+		headers/msgspv.h	\
+		headers/Receive.h	\
+		headers/sferror.h	\
+		headers/Transmit.h	
+SOURCES = 	realization/canio.cpp	\
+		realization/cannet.cpp 	\
+		realization/Connection.cpp 	\
+		realization/controller.cpp 	\
+		realization/generalScreen.cpp \
+		realization/gsConnect.cpp 	\
+		realization/gsMessageEditor.cpp \
+		realization/gsReceive.cpp 	\
+		realization/gsReceiveSL.cpp \
+		realization/gsTransmit.cpp 	\
+		realization/gsTransmitSL.cpp \
+		realization/main.cpp 	\
+		realization/MainWindow.cpp 	\
+		realization/MainWindowTab.cpp 	\
+		realization/MessageEditor.cpp 	\
+		realization/moc_Connection.cpp 	\
+		realization/moc_MainWindow.cpp 	\
+		realization/moc_MainWindowTab.cpp 	\
+		realization/moc_MessageEditor.cpp 	\
+		realization/moc_Receive.cpp 	\
+		realization/moc_Transmit.cpp 	\
+		realization/msg.cpp 	\
+		realization/msgspv.cpp 	\
+		realization/Receive.cpp 	\
+		realization/Transmit.cpp
