@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# modprobe vcan
+# ip link add type vcan
+echo "CAN service started!"
+# ip link add dev $C type vcan
+# ifconfig can0 up
+echo "CAN port can0 started!"
