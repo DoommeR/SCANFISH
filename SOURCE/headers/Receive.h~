@@ -1,7 +1,7 @@
 #ifndef RECEIVE_H
 #define	RECEIVE_H
 
-#include <qt4/QtGui/QApplication>
+#include <QtGui/QApplication>
 #include <QLabel>
 #include <QWidget>
 #include <QPushButton>

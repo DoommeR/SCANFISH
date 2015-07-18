@@ -9,6 +9,8 @@
 #include "MainWindow.h"
 
 
+#ifndef MAINWINDOWTAB_H
+#define	MAINWINDOWTAB_H
 
 class MainWindowTab:public QTabWidget
 {

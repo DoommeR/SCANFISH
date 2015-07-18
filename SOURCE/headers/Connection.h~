@@ -1,7 +1,7 @@
 #ifndef CONNECTION_H
 #define	CONNECTION_H
 
-#include <qt4/QtGui/QApplication>
+#include <qt5/QtGui/QApplication>
 #include <QLabel>
 #include <QWidget>
 #include <QPushButton>
