@@ -7,7 +7,7 @@
 
 #include "controller.h"
 #include "MainWindow.h"
-
+#include "TimeWin.h"
 
 
 class MainWindowTab:public QTabWidget
@@ -18,7 +18,7 @@ public:
     QPushButton *addBut;
     QTabWidget *tab;
     MainWindow *MainWin;
-    MainWindow *MainWin2;
+	TimeWindow *timewin;
 
 public slots:
     void addNewTab();

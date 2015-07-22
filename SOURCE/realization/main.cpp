@@ -14,7 +14,7 @@
 #include "headers/MainWindow.h"
 #include "headers/controller.h"
 #include "headers/MainWindowTab.h"
-
+#include "headers/TimeWin.h"
 
 //void MsgHandler(QtMsgType type,const char *msg)
 void MsgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
@@ -32,13 +32,14 @@ int main(int argc, char *argv[])
    MainWindowTab *MainWinTab=new MainWindowTab(NULL);
 
    QMainWindow mw(0);
-   mw.setWindowTitle("scanfish");
+   mw.setWindowTitle("ScanFISH");
    mw.setCentralWidget(MainWinTab);
    QMenuBar *mbar=mw.menuBar();
    QMenu *menu=new QMenu("Menu");
    menu->addAction("About",MainWin,SLOT(showCredits()));
    menu->addAction("Quit",&app,SLOT(quit()));
    mbar->addMenu(menu);
+	
 
    mw.setGeometry(100,100,850,550);
    mw.show();
