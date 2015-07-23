@@ -21,6 +21,7 @@ MessageEditor::MessageEditor (QWidget *MesEd)
 
    createMesTabWidget->setLayout(createMesLayout);
    createMesTab->addTab(createMesTabWidget,  " Create Message ");
+   sendOptionsTabWidget->setLayout(sendOptionsLayout);
    createMesTab->addTab(sendOptionsTabWidget,"  Send Options  ");
    MainMesEditLayout->addWidget(createMesTab);
    setLayout(MainMesEditLayout);
@@ -63,8 +64,10 @@ void MessageEditor::buildCreateMesTab()
    tLabel_DLC=new QLabel("DLC:");
    tLabel_fDLC=new QLabel("");
    tLabel_DATA=new QLabel("DATA:");
+
    for (i=0;i<8;i++)
        tLabel_fDATA[i]=new QLabel("");
+
    SendButton=new QPushButton ("Send");
    SendButton->setFixedSize(95,27);
 
@@ -72,6 +75,7 @@ void MessageEditor::buildCreateMesTab()
    bLineEdit_ID=new QLineEdit;
    bLabel_DLC=new QLabel("DLC:");
    bLabel_DATA=new QLabel("DATA:");
+
    for (i=0;i<8;i++)
        bLineEdit_DATA[i]=new QLineEdit("");
 
@@ -134,6 +138,20 @@ void MessageEditor::buildCreateMesTab()
 void MessageEditor::buildSendOptionsTab()
 {
    sendOptionsLayout = new QGridLayout;
+	tLabel_Timer=new QLabel("Timer:");
+	tLineEdit_Timer=new QLineEdit("0");
+	tLabel_Num=new QLabel("Pakages:");
+	tLineEdit_Pack =new QLineEdit("1");
+
+   sendOptionsLayout->addWidget(tLabel_Timer,1,0,Qt::AlignLeft);
+	tLineEdit_Timer->setFixedSize(80,27);
+   sendOptionsLayout->addWidget(tLineEdit_Timer,1,1,Qt::AlignLeft);
+   	tLineEdit_Pack->setFixedSize(80,27);
+   sendOptionsLayout->addWidget(tLabel_Num,2,0,Qt::AlignLeft);
+   sendOptionsLayout->addWidget(tLineEdit_Pack,2,1,Qt::AlignLeft);
+	createMesLayout->setColumnStretch(0,100);
+	createMesLayout->setColumnStretch(1,100);	
+	createMesLayout->setSpacing(2);
 }
 
 

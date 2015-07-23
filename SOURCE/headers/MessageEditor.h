@@ -13,6 +13,7 @@
 #include <QRegExpValidator>
 #include <QRegExp>
 #include <QVariant>
+#include <QTabWidget>
 #include <QTableWidgetItem>
 #include <QSpinBox>
 #include <QSize>
@@ -27,7 +28,16 @@
 class MessageEditor : public QGroupBox
 {
     Q_OBJECT
-    QGridLayout *MesEditLayout;
+
+    QGridLayout *createMesLayout;
+    QGridLayout *sendOptionsLayout;
+    QGridLayout *MainMesEditLayout;
+
+    QWidget *createMesTabWidget;
+    QWidget *sendOptionsTabWidget;
+
+    void buildCreateMesTab();
+    void buildSendOptionsTab();
 
 public:
     MessageEditor (QWidget *MesEd);
@@ -36,12 +46,10 @@ public:
     signals:
     void DLC_TextChanged (int k);
     void SendClicked();
-	
     void SendSig(QString ID,QString DLC,QString DATA,QTime time);
     void changeNum();
-	void buildCreateMesTab();
-	void buildSendOptionsTab();
-	
+
+
 private slots:
     void CommitClicked();
     void EnableCommitButton();
@@ -75,17 +83,14 @@ private:
 
     QWidget *DATA_Widget;
     QWidget *fDATA_Widget;
-
-   QGridLayout *MainMesEditLayout;
-   QWidget *createMesTabWidget;
-   QWidget *sendOptionsTabWidget;
-
-   QTabWidget *createMesTab;
-   QTabWidget *sendOptionsTab;
-
-   QGridLayout *sendOptionsLayout;
-   QGridLayout *createMesLayout;
-
+    QTabWidget *createMesTab;
+    QTabWidget *sendOptionsTab;
+//------------------
+	QLabel *tLabel_Timer;
+	QLabel *tLabel_Num;
+	QLineEdit *tLineEdit_Timer;
+	QLineEdit *tLineEdit_Pack;
+//------------------
     int i,k,s,d,f;
     QLineEdit *bLineEdit_DATA[8];
 
@@ -94,4 +99,5 @@ private:
 };
 
 #endif	/* MESEDIT_H */
+
 
