@@ -19,6 +19,7 @@ public:
     MainWindow *MainWin;
 
 public slots:
+    void slotCloseTab(int index);
     void addNewTab();
     void changeTabText();
 

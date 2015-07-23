@@ -8,8 +8,8 @@ MainWindowTab :: MainWindowTab(QTabWidget *tab1) : QTabWidget(tab1)
     addBut = new QPushButton("Add connection");
     MainWin=new MainWindow(NULL);
     tab->addTab(MainWin,"new net");
-    //tab->setTabsClosable(true);
-
+    tab->setTabsClosable(true);
+    connect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(slotCloseTab(int)));
     addBut->setIcon(QIcon("./newic.png"));
 
     tab->setCornerWidget(addBut,Qt::TopRightCorner);
@@ -22,6 +22,10 @@ MainWindowTab :: MainWindowTab(QTabWidget *tab1) : QTabWidget(tab1)
     QObject::connect(MainWin->Con,SIGNAL(active()),this,
             SLOT(changeTabText()));
 
+}
+void MainWindowTab::slotCloseTab(int index)
+{
+	tab->removeTab(index);
 }
 
 void MainWindowTab::addNewTab()
