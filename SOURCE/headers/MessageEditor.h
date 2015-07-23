@@ -90,6 +90,7 @@ private:
 	QLabel *tLabel_Num;
 	QLineEdit *tLineEdit_Timer;
 	QLineEdit *tLineEdit_Pack;
+	QPushButton *tButtonCommit;
 //------------------
     int i,k,s,d,f;
     QLineEdit *bLineEdit_DATA[8];
