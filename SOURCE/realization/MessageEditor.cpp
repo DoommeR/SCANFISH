@@ -142,18 +142,14 @@ void MessageEditor::buildSendOptionsTab()
 	tLineEdit_Timer=new QLineEdit("0");
 	tLabel_Num=new QLabel("Pakages:");
 	tLineEdit_Pack =new QLineEdit("1");
-	tButtonCommit= new QPushButton("commit");
-	//bLabel_Timer=new Qlabel("");
 	
    sendOptionsLayout->addWidget(tLabel_Timer,1,0,Qt::AlignLeft);
-	tLineEdit_Timer->setFixedSize(20,27);
+	tLineEdit_Timer->setFixedSize(40,27);
    sendOptionsLayout->addWidget(tLineEdit_Timer,1,1,Qt::AlignLeft);
-   	tLineEdit_Pack->setFixedSize(20,27);
+   	tLineEdit_Pack->setFixedSize(40,27);
    sendOptionsLayout->addWidget(tLabel_Num,2,0,Qt::AlignLeft);
   
 	sendOptionsLayout->addWidget(tLineEdit_Pack,2,1,2,10,Qt::AlignLeft);
-	sendOptionsLayout->addWidget(tButtonCommit,2,2,Qt::AlignLeft);
-	
 	
 	//createMesLayout->setColumnStretch(0,100);
 	//createMesLayout->setColumnStretch(1,100);
@@ -255,14 +251,12 @@ void MessageEditor :: SendSigSl()
     unsigned long gsId;
     unsigned int gsDlc;
     unsigned char gsData[8];
-	unsigned int num_pack;
-	unsigned int num_time;
+	 int num_pack;
+	 int num_time;
 	num_pack = tLineEdit_Pack -> text().toUInt(&ok,10);
 	num_time = tLineEdit_Timer -> text().toUInt(&ok,10);
 	
-	for (i=0; i<num_pack; i++)
-	{
-		wait(num_time);
+	
 		gsId=tLabel_fID->text().toUInt(&ok,10);
 		gsDlc=tLabel_fDLC->text().toUInt(&ok,10);
 		GeneralScreen::getGS()->GSMesEdit->gsStart();
@@ -277,11 +271,16 @@ void MessageEditor :: SendSigSl()
 		//struct timeval timestamp;
 		time=(QDateTime::fromTime_t(GeneralScreen::getGS()->GSMesEdit->getTimestampSec()).time());
 		time=time.addMSecs(GeneralScreen::getGS()->GSMesEdit->getTimestampMS()/1000);
+		
 		if (GeneralScreen::getGS()->GSMesEdit->gsSend(gsId,gsDlc,gsData)==0)
-		{
-		   emit SendSig(tLabel_fID->text(),tLabel_fDLC->text(),data,time);
+		{	
+			for (i=0; i<num_pack; i++)
+			{	
+				sleep(num_time);
+				emit SendSig(tLabel_fID->text(),tLabel_fDLC->text(),data,time);
+			}
 		}
-	}
+	
 }
 
 

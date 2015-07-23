@@ -21,6 +21,7 @@
 #include <QIntValidator>
 #include <QTime>
 #include <stdio.h>
+#include <unistd.h>
 
 #include "controller.h"
 #include "msg.h"
@@ -90,7 +91,6 @@ private:
 	QLabel *tLabel_Num;
 	QLineEdit *tLineEdit_Timer;
 	QLineEdit *tLineEdit_Pack;
-	QPushButton *tButtonCommit;
 //------------------
     int i,k,s,d,f;
     QLineEdit *bLineEdit_DATA[8];
