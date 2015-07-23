@@ -14,7 +14,7 @@
 #include "headers/MainWindow.h"
 #include "headers/controller.h"
 #include "headers/MainWindowTab.h"
-#include "headers/TimeWin.h"
+
 
 //void MsgHandler(QtMsgType type,const char *msg)
 void MsgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)

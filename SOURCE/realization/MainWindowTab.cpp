@@ -7,7 +7,6 @@ MainWindowTab :: MainWindowTab(QTabWidget *tab1) : QTabWidget(tab1)
     tab=new QTabWidget;
     addBut = new QPushButton("Add connection");
     MainWin=new MainWindow(NULL);
-   // timewin=new TimeWindow(NULL);
     tab->addTab(MainWin,"new net");
     //tab->setTabsClosable(true);
 
@@ -28,14 +27,10 @@ MainWindowTab :: MainWindowTab(QTabWidget *tab1) : QTabWidget(tab1)
 void MainWindowTab::addNewTab()
 {
     MainWin=new MainWindow(NULL);
-    tab->addTab(MainWin,"вкладочка_1");
+    tab->addTab(MainWin,"new connect");
     QObject::connect(MainWin->Con,SIGNAL(active()),this,
             SLOT(changeTabText()));
 
-    timewin = new TimeWindow(NULL);
-    tab->addTab(timewin,"вкладочка_2");
-    QObject::connect(timewin->Con,SIGNAL(active()),this,
-            SLOT(changeTabText()));
 }
 
 void MainWindowTab::changeTabText()

@@ -24,7 +24,8 @@ HEADERS =	headers/canio.h	\
 		headers/msgspv.h	\
 		headers/Receive.h	\
 		headers/sferror.h	\
-		headers/Transmit.h	
+		headers/Transmit.h	\
+		headers/TimeWindow.h	
 SOURCES = 	realization/canio.cpp	\
 		realization/cannet.cpp 	\
 		realization/Connection.cpp 	\
@@ -43,5 +44,6 @@ SOURCES = 	realization/canio.cpp	\
 		realization/msg.cpp 	\
 		realization/msgspv.cpp 	\
 		realization/Receive.cpp 	\
-		realization/Transmit.cpp	
+		realization/Transmit.cpp	\
+		realization/TimeWindow.cpp
 CONFIG += qt warn_on release

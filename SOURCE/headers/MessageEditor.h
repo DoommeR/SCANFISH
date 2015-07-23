@@ -36,10 +36,12 @@ public:
     signals:
     void DLC_TextChanged (int k);
     void SendClicked();
+	
     void SendSig(QString ID,QString DLC,QString DATA,QTime time);
     void changeNum();
-
-
+	void buildCreateMesTab();
+	void buildSendOptionsTab();
+	
 private slots:
     void CommitClicked();
     void EnableCommitButton();
@@ -73,6 +75,16 @@ private:
 
     QWidget *DATA_Widget;
     QWidget *fDATA_Widget;
+
+   QGridLayout *MainMesEditLayout;
+   QWidget *createMesTabWidget;
+   QWidget *sendOptionsTabWidget;
+
+   QTabWidget *createMesTab;
+   QTabWidget *sendOptionsTab;
+
+   QGridLayout *sendOptionsLayout;
+   QGridLayout *createMesLayout;
 
     int i,k,s,d,f;
     QLineEdit *bLineEdit_DATA[8];

@@ -33,7 +33,8 @@ public:
     void setContrNum();
     int num;
     Connection *Con;
-
+	MessageEditor *MessEd; 	
+	
     signals:
     void ReceiveSignal(int ID,int DLC,QString DATA,QTime time);
 
@@ -45,8 +46,8 @@ public slots:
 
 
 private:
-    MessageEditor *MessEd; 
-   Transmit *Trans; 
+    
+    Transmit *Trans; 
     Receive *Rec;
     GeneralScreen *gs;
 };
