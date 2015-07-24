@@ -252,11 +252,10 @@ void MessageEditor :: SendSigSl()
     unsigned int gsDlc;
     unsigned char gsData[8];
 	int num_pack;
-	int num_time;
+	float num_time;
 	
 	num_pack = tLineEdit_Pack -> text().toUInt(&ok,10);
-	num_time = tLineEdit_Timer -> text().toUInt(&ok,10);
-	
+	num_time = tLineEdit_Timer -> text().toFloat(&ok);
 	
 		gsId=tLabel_fID->text().toUInt(&ok,10);
 		gsDlc=tLabel_fDLC->text().toUInt(&ok,10);
@@ -268,18 +267,25 @@ void MessageEditor :: SendSigSl()
 		   gsData[i]=tLabel_fDATA[i]->text().toUShort(&ok,16);
 		}
 		
+		for (i=0; i<num_pack; i++)
+		{
 		QTime time;
+		float control_time;
+		
 		//struct timeval timestamp;
 		time=(QDateTime::fromTime_t(GeneralScreen::getGS()->GSMesEdit->getTimestampSec()).time());
 		time=time.addMSecs(GeneralScreen::getGS()->GSMesEdit->getTimestampMS()/1000);
-		if (GeneralScreen::getGS()->GSMesEdit->gsSend(gsId,gsDlc,gsData)==0)
-		{	
-			for (i=0; i<num_pack; i++)
-			{
-				QTest::qWait(num_time*1000);
-				//sleep(num_time);
-				emit SendSig(tLabel_fID->text(),tLabel_fDLC->text(),data,time);
+		
+			if (GeneralScreen::getGS()->GSMesEdit->gsSend(gsId,gsDlc,gsData)==0)
+			{	
+				
+					
+					//sleep(num_time);
+					emit SendSig(tLabel_fID->text(),tLabel_fDLC->text(),data,time);
 			}
+		control_time=num_time*1000;
+		
+		 QTest::qWait(control_time);
 		}
 	
 }
