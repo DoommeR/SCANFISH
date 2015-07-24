@@ -25,6 +25,8 @@ MainWindowTab :: MainWindowTab(QTabWidget *tab1) : QTabWidget(tab1)
 }
 void MainWindowTab::slotCloseTab(int index)
 {
+	if (index==0) index=0;
+	else
 	tab->removeTab(index);
 }
 
