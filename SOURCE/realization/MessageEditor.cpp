@@ -154,7 +154,7 @@ void MessageEditor::buildSendOptionsTab()
 	sendOptionsLayout-> addWidget(fLabel_Timer,1,2,Qt::AlignLeft);
 	sendOptionsLayout->addWidget(tLabel_Num,2,0,Qt::AlignLeft);
   
-	sendOptionsLayout->addWidget(tLineEdit_Pack,2,1,2,10,Qt::AlignLeft);
+	sendOptionsLayout->addWidget(tLineEdit_Pack,2,1,Qt::AlignLeft);
 	sendOptionsLayout-> addWidget(fLabel_Num,2,2,Qt::AlignLeft);
 	sendOptionsLayout -> addWidget(tButtonFake,2,3,Qt::AlignRight);
 	
