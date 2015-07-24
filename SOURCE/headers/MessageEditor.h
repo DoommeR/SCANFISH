@@ -20,6 +20,7 @@
 #include <QGroupBox>
 #include <QIntValidator>
 #include <QTime>
+#include <QtTest/QTest>
 #include <stdio.h>
 #include <unistd.h>
 
