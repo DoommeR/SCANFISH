@@ -50,8 +50,9 @@ MessageEditor::MessageEditor (QWidget *MesEd)
            this,SLOT(EnableCommitButton()));
 
    connect (CommitButton, SIGNAL(clicked()),this,SLOT(CommitClicked()));
-   connect (SendButton, SIGNAL(clicked()),this,
-           SLOT(SendSigSl()));
+   connect (SendButton, SIGNAL(clicked()),this,SLOT(SendSigSl()));
+   connect (tButtonFake,SIGNAL(clicked()),this,SLOT(FakeClicked()));
+		   
 }
 
 
@@ -143,15 +144,20 @@ void MessageEditor::buildSendOptionsTab()
 	tLabel_Num=new QLabel("Count:");
 	tLineEdit_Pack =new QLineEdit("1");
 	tButtonFake=new QPushButton("Ok");
+	fLabel_Timer=new QLabel("0");
+	fLabel_Num=new QLabel("1");
 	
 	sendOptionsLayout->addWidget(tLabel_Timer,1,0,Qt::AlignLeft);
 	 tLineEdit_Timer->setFixedSize(40,27);
 	sendOptionsLayout->addWidget(tLineEdit_Timer,1,1,Qt::AlignLeft);
    	 tLineEdit_Pack->setFixedSize(40,27);
+	sendOptionsLayout-> addWidget(fLabel_Timer,1,2,Qt::AlignLeft);
 	sendOptionsLayout->addWidget(tLabel_Num,2,0,Qt::AlignLeft);
   
 	sendOptionsLayout->addWidget(tLineEdit_Pack,2,1,2,10,Qt::AlignLeft);
-	sendOptionsLayout -> addWidget(tButtonFake,2,2,Qt::AlignRight);
+	sendOptionsLayout-> addWidget(fLabel_Num,2,2,Qt::AlignLeft);
+	sendOptionsLayout -> addWidget(tButtonFake,2,3,Qt::AlignRight);
+	
 	//createMesLayout->setColumnStretch(0,100);
 	//createMesLayout->setColumnStretch(1,100);
 	//createMesLayout->setColumnStretch(2,100);
@@ -159,6 +165,16 @@ void MessageEditor::buildSendOptionsTab()
 	//createMesLayout->setSpacing(3);
 }
 
+void MessageEditor::FakeClicked()
+{
+	QString text = tLineEdit_Timer->text();
+    text=text.toUpper();
+    fLabel_Timer->setText(text);
+	
+	text=tLineEdit_Pack->text();
+	text=text.toUpper();
+	fLabel_Num->setText(text);
+}
 
 void MessageEditor::CommitClicked()
 {

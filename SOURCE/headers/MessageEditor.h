@@ -57,6 +57,7 @@ private slots:
     void EnableCommitButton();
     void ChangeDLC();
     void SendSigSl();
+    void FakeClicked();
 
 private:
 
@@ -90,6 +91,8 @@ private:
 //------------------
 	QLabel *tLabel_Timer;
 	QLabel *tLabel_Num;
+	QLabel *fLabel_Timer;
+	QLabel *fLabel_Num;
 	QLineEdit *tLineEdit_Timer;
 	QLineEdit *tLineEdit_Pack;
 	QPushButton *tButtonFake;
