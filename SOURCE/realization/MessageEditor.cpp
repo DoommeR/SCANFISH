@@ -138,19 +138,20 @@ void MessageEditor::buildCreateMesTab()
 void MessageEditor::buildSendOptionsTab()
 {
    sendOptionsLayout = new QGridLayout;
-	tLabel_Timer=new QLabel("Timer:");
+	tLabel_Timer=new QLabel("Interval:");
 	tLineEdit_Timer=new QLineEdit("0");
-	tLabel_Num=new QLabel("Pakages:");
+	tLabel_Num=new QLabel("Count:");
 	tLineEdit_Pack =new QLineEdit("1");
+	tButtonFake=new QPushButton("Ok");
 	
-   sendOptionsLayout->addWidget(tLabel_Timer,1,0,Qt::AlignLeft);
-	tLineEdit_Timer->setFixedSize(40,27);
-   sendOptionsLayout->addWidget(tLineEdit_Timer,1,1,Qt::AlignLeft);
-   	tLineEdit_Pack->setFixedSize(40,27);
-   sendOptionsLayout->addWidget(tLabel_Num,2,0,Qt::AlignLeft);
+	sendOptionsLayout->addWidget(tLabel_Timer,1,0,Qt::AlignLeft);
+	 tLineEdit_Timer->setFixedSize(40,27);
+	sendOptionsLayout->addWidget(tLineEdit_Timer,1,1,Qt::AlignLeft);
+   	 tLineEdit_Pack->setFixedSize(40,27);
+	sendOptionsLayout->addWidget(tLabel_Num,2,0,Qt::AlignLeft);
   
 	sendOptionsLayout->addWidget(tLineEdit_Pack,2,1,2,10,Qt::AlignLeft);
-	
+	sendOptionsLayout -> addWidget(tButtonFake,2,2,Qt::AlignRight);
 	//createMesLayout->setColumnStretch(0,100);
 	//createMesLayout->setColumnStretch(1,100);
 	//createMesLayout->setColumnStretch(2,100);
